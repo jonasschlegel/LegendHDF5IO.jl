@@ -53,6 +53,6 @@ function LegendDataTypes.readdata(
     input::HDF5.H5DataStore, name::AbstractString,
     AT::Type{<:AbstractVector{<:RDWaveform}}
 )
-    tbl = readdata(input, name, TypedTables.Table{<:NamedTuple{(:t0, :dt, :values)}})
+    tbl = readdata(input, name, TypedTables.Table)
     from_table(tbl, AbstractVector{<:RDWaveform})
 end
